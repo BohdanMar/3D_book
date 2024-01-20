@@ -1,0 +1,43 @@
+body {
+ display: flex;
+ height: 100vh;
+ justify-content: center;
+ align-items: center;
+ perspective: 6000px;
+}
+.card {
+ width: 820px;
+ height: 1200px;
+ transition: 4s;
+ transform-style: preserve-3d;
+ position: relative;
+ transform: rotateY(35deg);
+}
+.front,
+.back {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ backface-visibility: hidden;
+}
+.front {
+ background: url(https://cdn1.ozone.ru/s3/multimedia-4/wc1200/6008678128.jpg);
+}
+.back {
+ background: url(https://cdn1.ozone.ru/s3/multimedia-5/wc1200/6008678129.jpg);
+ transform: translateZ(-115px) rotateY(180deg);
+}
+
+.card:hover {
+ transform: rotateY(180deg);
+}
+
+.card::before {
+ content:"";
+ position: absolute;
+ width: 115px;
+ height: 100%;
+ background: url( https://cdn1.ozone.ru/s3/multimedia-6/wc1200/6008678130.jpg);
+ transform: rotateY(90deg);
+ transform-origin: 0 100%;
+}
